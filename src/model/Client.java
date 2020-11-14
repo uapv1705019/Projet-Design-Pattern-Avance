@@ -1,5 +1,6 @@
 package model;
 
-public class Client implements Personne{
+public class Client implements Personne
+{
 
 }
