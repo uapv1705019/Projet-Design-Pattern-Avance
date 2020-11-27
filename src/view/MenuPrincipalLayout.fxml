@@ -1,23 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="mainPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="panneauPrincipal" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MenuPrincipalController">
    <children>
       <BorderPane prefHeight="600.0" prefWidth="800.0">
-         <top>
-            <Label text="Gestionnaire des pharmacies" BorderPane.alignment="CENTER">
-               <font>
-                  <Font size="33.0" />
-               </font>
-            </Label>
-         </top>
          <center>
-            <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+            <TabPane id="fenetrePrincipale" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
               <tabs>
                 <Tab text="Pharmacie 1">
                   <content>
@@ -59,6 +53,22 @@
               </tabs>
             </TabPane>
          </center>
+         <top>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label contentDisplay="CENTER" text="Gestionnaire des pharmacies">
+                     <font>
+                        <Font size="33.0" />
+                     </font>
+                  </Label>
+                  <Button id="AjouteurPharmacie" alignment="BASELINE_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" text="Ajouter une nouvelle pharmacie" onAction="#ajouterPharmacie">
+                     <HBox.margin>
+                        <Insets left="100.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </top>
       </BorderPane>
    </children>
 </AnchorPane>

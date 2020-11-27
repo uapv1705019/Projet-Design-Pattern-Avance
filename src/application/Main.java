@@ -20,7 +20,7 @@ public class Main extends Application
 {
 	
 	private static Stage primaryStage;
-	private AnchorPane mainPane;
+	private AnchorPane panneauPrincipal;
 	
 
 
@@ -40,7 +40,12 @@ public class Main extends Application
         loader.setLocation(Main.class.getResource("../view/MenuPrincipalLayout.fxml"));
         try 
         {
-        	mainPane = (AnchorPane) loader.load();
+        	panneauPrincipal = (AnchorPane) loader.load();
+        	// Show the scene containing the root layout.
+            Scene scene = new Scene(panneauPrincipal);
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        	
 		} 
         catch (IOException e) 
         {
@@ -48,10 +53,7 @@ public class Main extends Application
 			e.printStackTrace();
 		}
         
-        // Show the scene containing the root layout.
-        Scene scene = new Scene(mainPane);
-        primaryStage.setScene(scene);
-        primaryStage.show();
+        
     }
     
     
