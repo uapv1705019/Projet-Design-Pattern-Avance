@@ -1,5 +1,5 @@
 package model;
 
-public class CompteFranchise implements Compte {
+public class CompteFranchise extends Compte {
 
 }

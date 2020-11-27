@@ -1,8 +1,10 @@
 package model;
 
-public interface Compte {
-	private String IBAN;
-	private float credit;
+public abstract class Compte {
+	String IBAN;
+	float credit;
 	
-	public boolean autoriser(Transaction t);
+	public boolean autoriser(Transaction t) {
+		return true;
+	}
 }

@@ -1,6 +1,6 @@
 package model;
 
-public class CompteClassique implements Compte {
+public class CompteClassique extends Compte {
 	
 
 	@Override

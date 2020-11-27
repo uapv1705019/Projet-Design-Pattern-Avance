@@ -20,12 +20,16 @@ public class Main extends Application
 {
 	
 	private static Stage primaryStage;
-	private AnchorPane configLayout;
-	BorderPane jeuLayout;
-	AnchorPane joueurLayout;
-	AnchorPane partieLayout;
+	private AnchorPane mainPane;
 	
 
+
+	@Override
+	public void start(Stage primaryStage) throws Exception {
+		Main.primaryStage = primaryStage;
+        primaryStage.setTitle("Gestionnaire");
+		initRootLayout();
+	}
 	
 	/**
      * Initializes the root layout.
@@ -33,10 +37,10 @@ public class Main extends Application
     public void initRootLayout() 
     {
     	FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(Main.class.getResource("view/MenuPrincipalLayout.fxml"));
+        loader.setLocation(Main.class.getResource("../view/MenuPrincipalLayout.fxml"));
         try 
         {
-			configLayout = (AnchorPane) loader.load();
+        	mainPane = (AnchorPane) loader.load();
 		} 
         catch (IOException e) 
         {
@@ -45,7 +49,7 @@ public class Main extends Application
 		}
         
         // Show the scene containing the root layout.
-        Scene scene = new Scene(configLayout);
+        Scene scene = new Scene(mainPane);
         primaryStage.setScene(scene);
         primaryStage.show();
     }
@@ -63,11 +67,5 @@ public class Main extends Application
 	}
 
 
-
-	@Override
-	public void start(Stage arg0) throws Exception {
-		// TODO Auto-generated method stub
-		
-	}
 
 }
