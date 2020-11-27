@@ -7,8 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="400.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+<AnchorPane fx:id="ajoutPharmacie" prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AjoutPharmacieController">
    <children>
       <VBox alignment="CENTER" layoutX="-2.0" layoutY="-2.0" prefHeight="400.0" prefWidth="400.0">
          <children>
@@ -22,14 +21,14 @@
             <Label text="Surface Commerciale" />
             <TextField />
             <Label text="Type" />
-            <RadioButton mnemonicParsing="false" text="Franchisée" />
-            <RadioButton mnemonicParsing="false" text="Indépendante" />
+            <RadioButton fx:id="radioFranchisee" mnemonicParsing="false" text="Franchisée" />
+            <RadioButton fx:id="radioIndependante" mnemonicParsing="false" text="Indépendante" />
             <Label text="Siret" />
             <TextField />
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button id="annulateurCreationPharmacie" mnemonicParsing="false" text="Annuler" />
-                  <Button id="validateurCreationPharmacie" mnemonicParsing="false" text="Valider">
+                  <Button fx:id="annulateurCreationPharmacie" mnemonicParsing="false" onAction="#annulerCreationPharmacie" text="Annuler" />
+                  <Button fx:id="validateurCreationPharmacie" mnemonicParsing="false" onAction="#validerCreationPharmacie" text="Valider">
                      <HBox.margin>
                         <Insets left="100.0" />
                      </HBox.margin>
