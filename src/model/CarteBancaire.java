@@ -1,8 +1,7 @@
 package model;
 
 public class CarteBancaire {
-	 private Compte compte;
-	 private Utilisateur propriétaire;
+	 private Personne propriétaire;
 	 private String type;
 	 private Reseau réseau;
 }
