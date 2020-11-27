@@ -60,7 +60,7 @@ public class AjoutPharmacieController  implements Initializable
 			//PharmacieFactory pf = new PharmacieIndependanteFactory();
 		}
 		
-		
+		// Récupérer les valeurs pour créer une pharmacie 
 		
 	}
 
