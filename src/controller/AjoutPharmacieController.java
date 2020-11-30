@@ -1,19 +1,26 @@
 package controller;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import application.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import model.Pharmacie;
 import model.PharmacieFactory;
+import model.PharmacieFranchisee;
 import model.PharmacieFranchiseeFactory;
 import model.PharmacieIndependanteFactory;
 
@@ -62,6 +69,9 @@ public class AjoutPharmacieController  implements Initializable
 	 */
 	@FXML
 	private TextField SurfacePharmacie;
+	
+	private AnchorPane panneauPrincipal;
+
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -85,8 +95,29 @@ public class AjoutPharmacieController  implements Initializable
 		}
 		// Récupérer les valeurs pour créer une pharmacie 
 		
-		//pf.creerPharmacie(NomPharmacie.getText(), SurfacePharmacie.getText(), SiretPharmacie.getText());
+		Pharmacie p = new PharmacieFranchisee("test0", 0, "test1", "test2");
+		// p = pf.creerPharmacie(NomPharmacie.getText(), SurfacePharmacie.getText(), SiretPharmacie.getText());
 		//Tab tab = new Tab();
+		FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(Main.class.getResource("../view/MenuPrincipalLayout.fxml"));
+		MenuPrincipalController controller = loader.getController();
+		
+		try 
+        {
+        	panneauPrincipal = (AnchorPane) loader.load();
+        	// Show the scene containing the root layout.
+            Scene scene = new Scene(panneauPrincipal);
+            Main.primaryStage.setScene(scene);
+            Main.primaryStage.show();
+        	
+		} 
+        catch (IOException e) 
+        {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		controller.ajouterPharmacieLayout(p);
 		
 		//tabPane.getTabs().add(tab);
 		

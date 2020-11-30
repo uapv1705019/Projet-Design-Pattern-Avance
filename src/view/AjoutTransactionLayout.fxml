@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="ajoutPharmacie" prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AjoutPharmacieController">
+<AnchorPane fx:id="ajoutTransaction" prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AjoutTransactionController">
    <children>
       <VBox alignment="CENTER" layoutX="-2.0" layoutY="-2.0" prefHeight="400.0" prefWidth="400.0">
          <children>
@@ -17,13 +17,13 @@
                </font>
             </Label>
             <Label text="Référence" />
-            <TextField id="referenceTransaction" fx:id="SurfacePharmacie" />
+            <TextField fx:id="referenceTransaction" />
             <Label text="IBAN du compte acheteur" />
-            <TextField id="IBAN" fx:id="SiretPharmacie1" />
+            <TextField fx:id="IBAN" />
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button fx:id="annulateurCreationPharmacie" mnemonicParsing="false" onAction="#annulerCreationPharmacie" text="Annuler" />
-                  <Button fx:id="validateurCreationPharmacie" mnemonicParsing="false" onAction="#validerCreationPharmacie" text="Valider">
+                  <Button fx:id="annulateurCreationTransaction" mnemonicParsing="false" onAction="#annulerCreationTransaction" text="Annuler" />
+                  <Button fx:id="validateurCreationTransaction" mnemonicParsing="false" onAction="#validerCreationTransaction" text="Valider">
                      <HBox.margin>
                         <Insets left="100.0" />
                      </HBox.margin>

@@ -19,7 +19,7 @@ import javafx.scene.layout.VBox;
 public class Main extends Application 
 {
 	
-	private static Stage primaryStage;
+	public static Stage primaryStage;
 	private AnchorPane panneauPrincipal;
 	
 

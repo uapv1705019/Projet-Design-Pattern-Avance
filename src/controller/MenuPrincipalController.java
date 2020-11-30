@@ -1,6 +1,7 @@
 package controller;
 
 
+import java.awt.Label;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -13,8 +14,12 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+import model.Pharmacie;
 
 public class MenuPrincipalController implements Initializable
 {
@@ -36,6 +41,18 @@ public class MenuPrincipalController implements Initializable
 		
 	}
 	
+	
+	public void ajouterPharmacieLayout(Pharmacie p) {
+		Tab tab = new Tab();
+		
+		AnchorPane ap = new AnchorPane();
+		//ap.getChildren().addAll();
+		tab.setContent(ap);
+		//tab.setText(p.getNom());
+		this.fenetrePrincipale.getTabs().add(tab);
+	}
+	
+	
 	public void ajouterPharmacie(ActionEvent event) throws IOException {
 		Parent info = FXMLLoader.load(getClass().getResource("../view/AjoutPharmacieLayout.fxml"));
         Scene scene = new Scene(info);
@@ -45,6 +62,7 @@ public class MenuPrincipalController implements Initializable
         appStage.setScene(scene);
         appStage.show();
 	}
+	
 	
 	public void ajouterPersonnel(ActionEvent event) throws IOException {
 		Parent info = FXMLLoader.load(getClass().getResource("../view/AjoutPersonnelLayout.fxml"));
