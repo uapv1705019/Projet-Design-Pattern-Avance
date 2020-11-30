@@ -23,8 +23,7 @@ public class MenuPrincipalController implements Initializable
 	/* 
 	 * Fenetre contenant les onglets
 	 */
-	@FXML
-	private TabPane fenetrePrincipale;
+	@FXML TabPane fenetrePrincipale;
 	
 	/* 
 	 * Bouton permettant l'ajout de nouvelles pharmacies
@@ -39,6 +38,26 @@ public class MenuPrincipalController implements Initializable
 	
 	public void ajouterPharmacie(ActionEvent event) throws IOException {
 		Parent info = FXMLLoader.load(getClass().getResource("../view/AjoutPharmacieLayout.fxml"));
+        Scene scene = new Scene(info);
+        // Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Stage appStage = new Stage();
+        appStage.setTitle("Ajout en cours");
+        appStage.setScene(scene);
+        appStage.show();
+	}
+	
+	public void ajouterPersonnel(ActionEvent event) throws IOException {
+		Parent info = FXMLLoader.load(getClass().getResource("../view/AjoutPersonnelLayout.fxml"));
+        Scene scene = new Scene(info);
+        // Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Stage appStage = new Stage();
+        appStage.setTitle("Ajout en cours");
+        appStage.setScene(scene);
+        appStage.show();
+	}
+	
+	public void ajouterTransaction(ActionEvent event) throws IOException {
+		Parent info = FXMLLoader.load(getClass().getResource("../view/AjoutTransactionLayout.fxml"));
         Scene scene = new Scene(info);
         // Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Stage appStage = new Stage();

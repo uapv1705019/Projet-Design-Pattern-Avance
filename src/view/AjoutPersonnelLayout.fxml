@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="ajoutPersonnel" prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AjoutPersonnelController">
+   <children>
+      <VBox alignment="CENTER" layoutX="-2.0" layoutY="-2.0" prefHeight="400.0" prefWidth="400.0">
+         <children>
+            <Label alignment="CENTER" text="Entrez les données du nouvel employé">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <HBox prefHeight="54.0" prefWidth="400.0">
+               <children>
+                  <VBox prefHeight="100.0" prefWidth="187.0">
+                     <children>
+                        <Label text="Nom" />
+                        <TextField fx:id="nomEmploye" prefHeight="25.0" prefWidth="317.0" />
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="100.0" prefWidth="199.0">
+                     <children>
+                        <Label text="Prénom" />
+                        <TextField fx:id="prenomEmploye" prefHeight="25.0" prefWidth="317.0" />
+                     </children>
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+            </HBox>
+            <Label text="Adresse" />
+            <TextField fx:id="adresseEmploye"/>
+            <Label text="Poste" />
+            <RadioButton fx:id="radioPharmacienDiplome" mnemonicParsing="false" text="Pharmacien diplômé" />
+            <RadioButton fx:id="radioCommandeSelectionne" mnemonicParsing="false" text="Préparateur de commande" />
+            <Label text="Type d'employé" />
+            <TextField fx:id="typeEmploye" />
+            <Label layoutX="168.0" layoutY="227.0" text="Salaire" />
+            <TextField fx:id="salaire" layoutX="10.0" layoutY="244.0" />
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="annulateurCreationPersonnel" mnemonicParsing="false" onAction="#annulerCreationPersonnel" text="Annuler" />
+                  <Button fx:id="validateurCreationPersonnel" mnemonicParsing="false" onAction="#validerCreationPersonnel" text="Valider">
+                     <HBox.margin>
+                        <Insets left="100.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

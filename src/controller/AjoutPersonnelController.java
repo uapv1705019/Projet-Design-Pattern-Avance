@@ -13,75 +13,90 @@ import javafx.scene.control.TabPane;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
+import model.EmployeFactory;
+import model.EmployePharmacienDiplomeFactory;
+import model.EmployePreparateurCommandeFactory;
 import model.PharmacieFactory;
 import model.PharmacieFranchiseeFactory;
 import model.PharmacieIndependanteFactory;
 
-public class AjoutPharmacieController  implements Initializable
+public class AjoutPersonnelController  implements Initializable
 {
-	private static AjoutPharmacieController CONTROLLER;
+	private static AjoutPersonnelController CONTROLLER;
 	
 	/* 
 	 * Bouton permettant la validation de l'ajout d'une nouvelle pharmacie
 	 */
 	@FXML
-	private Button validateurCreationPharmacie;
+	private Button validateurCreationPersonnel;
 	
 	/* 
 	 * Bouton permettant l'annulation de l'ajout d'une nouvelle pharmacie
 	 */
 	@FXML
-	private Button annulateurCreationPharmacie;
+	private Button annulateurCreationPersonnel;
 	
 	/* 
 	 * Radio permettant de sélectionner comme type "franchisée"
 	 */
 	@FXML
-	private RadioButton radioFranchisee;
+	private RadioButton radioPharmacienDiplome;
 	
 	/* 
 	 * Radio permettant de sélectionner comme type "indépendante"
 	 */
 	@FXML
-	private RadioButton radioIndependante;
+	private RadioButton radioCommandeSelectionne;
 	
 	/* 
 	 * Champ contenant le nom de la pharmacie
 	 */
 	@FXML
-	private TextField NomPharmacie;
+	private TextField nomEmploye;
 	
 	/* 
 	 * Champ contenant le siret de la pharmacie
 	 */
 	@FXML
-	private TextField SiretPharmacie;
+	private TextField prenomEmploye;
 	
 	/* 
 	 * Champ contenant la surface commerciale de la pharmacie
 	 */
 	@FXML
-	private TextField SurfacePharmacie;
+	private TextField adresseEmploye;
+	
+	/* 
+	 * Champ contenant la surface commerciale de la pharmacie
+	 */
+	@FXML
+	private TextField typeEmploye;
+	
+	/* 
+	 * Champ contenant la surface commerciale de la pharmacie
+	 */
+	@FXML
+	private TextField salaire;
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		ToggleGroup radioSymbolGroup = new ToggleGroup();
-		this.radioFranchisee.setToggleGroup(radioSymbolGroup);
-		this.radioIndependante.setToggleGroup(radioSymbolGroup);
+		this.radioPharmacienDiplome.setToggleGroup(radioSymbolGroup);
+		this.radioCommandeSelectionne.setToggleGroup(radioSymbolGroup);
 	}
 
-	public void annulerCreationPharmacie(ActionEvent event) {
-		Stage stage = (Stage) annulateurCreationPharmacie.getScene().getWindow();
+	public void annulerCreationPersonnel(ActionEvent event) {
+		Stage stage = (Stage) annulateurCreationPersonnel.getScene().getWindow();
 	    stage.close();
 	}
 	
-	public void validerCreationPharmacie(ActionEvent event) {
-		PharmacieFactory pf;
-		if (radioFranchisee.isSelected() == true) {
-			pf = new PharmacieFranchiseeFactory();
+	public void validerCreationPersonnel(ActionEvent event) {
+		EmployeFactory ef;
+		if (radioPharmacienDiplome.isSelected() == true) {
+			ef = new EmployePharmacienDiplomeFactory();
 		}
-		else if (radioIndependante.isSelected() == true) {
-			pf = new PharmacieIndependanteFactory();
+		else if (radioCommandeSelectionne.isSelected() == true) {
+			ef = new EmployePreparateurCommandeFactory();
 		}
 		// Récupérer les valeurs pour créer une pharmacie 
 		

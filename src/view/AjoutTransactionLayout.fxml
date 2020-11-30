@@ -11,20 +11,15 @@
    <children>
       <VBox alignment="CENTER" layoutX="-2.0" layoutY="-2.0" prefHeight="400.0" prefWidth="400.0">
          <children>
-            <Label alignment="CENTER" text="Entrez les données de la nouvelle pharmacie">
+            <Label alignment="CENTER" text="Entrez la nouvelle transaction">
                <font>
                   <Font size="19.0" />
                </font>
             </Label>
-            <Label text="Nom" />
-            <TextField fx:id="NomPharmacie" prefHeight="25.0" prefWidth="317.0" />
-            <Label text="Surface Commerciale" />
-            <TextField fx:id="SurfacePharmacie" />
-            <Label text="Type" />
-            <RadioButton fx:id="radioFranchisee" mnemonicParsing="false" text="Franchisée" />
-            <RadioButton fx:id="radioIndependante" mnemonicParsing="false" text="Indépendante" />
-            <Label text="Siret" />
-            <TextField fx:id="SiretPharmacie" />
+            <Label text="Référence" />
+            <TextField id="referenceTransaction" fx:id="SurfacePharmacie" />
+            <Label text="IBAN du compte acheteur" />
+            <TextField id="IBAN" fx:id="SiretPharmacie1" />
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
                   <Button fx:id="annulateurCreationPharmacie" mnemonicParsing="false" onAction="#annulerCreationPharmacie" text="Annuler" />
