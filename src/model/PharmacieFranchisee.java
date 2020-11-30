@@ -12,4 +12,6 @@ public class PharmacieFranchisee extends Pharmacie
 		super(nom, surface_commerciale, type_pharmacie, sIRET);
 		// TODO Auto-generated constructor stub
 	}
+	
+	
 }
