@@ -11,4 +11,65 @@ public class Produit
 	private double prix_vente;
 	private Date date_peremption;
 	
+	public Produit(String id, String nom, String type, double prix_achat, double prix_vente, Date date_peremption) 
+	{
+		super();
+		this.id = id;
+		this.nom = nom;
+		this.type = type;
+		this.prix_achat = prix_achat;
+		this.prix_vente = prix_vente;
+		this.date_peremption = date_peremption;
+	}
+	public String getId() 
+	{
+		return id;
+	}
+	public void setId(String id) 
+	{
+		this.id = id;
+	}
+	public String getNom() 
+	{
+		return nom;
+	}
+	public void setNom(String nom) 
+	{
+		this.nom = nom;
+	}
+	public String getType() 
+	{
+		return type;
+	}
+	public void setType(String type) 
+	{
+		this.type = type;
+	}
+	public double getPrix_achat() 
+	{
+		return prix_achat;
+	}
+	public void setPrix_achat(double prix_achat) 
+	{
+		this.prix_achat = prix_achat;
+	}
+	public double getPrix_vente() 
+	{
+		return prix_vente;
+	}
+	public void setPrix_vente(double prix_vente) 
+	{
+		this.prix_vente = prix_vente;
+	}
+	public Date getDate_peremption() 
+	{
+		return date_peremption;
+	}
+	public void setDate_peremption(Date date_peremption) 
+	{
+		this.date_peremption = date_peremption;
+	}
+	
+	
+	
 }
