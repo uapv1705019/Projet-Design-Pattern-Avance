@@ -39,7 +39,7 @@ public abstract class Pharmacie
 		}
 	}
 	
-	public void ajouterProduit(Produit produit, double prix_vente)
+	public void ajouterProduit(Produit produit, double prix_vente) // le prix de vente étant fixé par la pharmacie, j'ai décidé de le faire ici
 	{
 		produit.setPrix_vente(prix_vente);
 		this.liste_produits.add(produit);
