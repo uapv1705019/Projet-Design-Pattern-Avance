@@ -29,7 +29,8 @@ public class MenuPrincipalController implements Initializable
 	/* 
 	 * Fenetre contenant les onglets
 	 */
-	@FXML TabPane fenetrePrincipale;
+	@FXML 
+	private TabPane fenetrePrincipale;
 	
 	/* 
 	 * Bouton permettant l'ajout de nouvelles pharmacies
@@ -52,7 +53,7 @@ public class MenuPrincipalController implements Initializable
 		//ap.getChildren().addAll();
 		tab.setContent(ap);
 		tab.setText(p.getNom());
-		this.fenetrePrincipale.getTabs().add(tab);
+		fenetrePrincipale.getTabs().add(tab);
 	}
 	
 	

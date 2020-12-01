@@ -4,9 +4,15 @@ public class EmployePharmacienDiplomeFactory implements EmployeFactory
 {
 
 	@Override
-	public void creerEmploye(String nom, String prenom, String adresse, Compte compte, String type_employe,
+	public Employe creerEmploye(String nom, String prenom, String adresse, Compte compte, String type_employe,
 			double salaire) {
-		// TODO Auto-generated method stub
+		Employe e = new PharmacienDiplome();
+
+		e.setNom(nom);
+		e.setPrenom(prenom);
+		e.setAdresse(adresse);
+
+		return e;
 		
 	}
 

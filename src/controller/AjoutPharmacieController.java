@@ -86,7 +86,7 @@ public class AjoutPharmacieController  implements Initializable
 	}
 	
 	public void validerCreationPharmacie(ActionEvent event) throws IOException {
-		PharmacieFactory pf;
+		PharmacieFactory pf = null;
 		if (radioFranchisee.isSelected() == true) {
 			pf = new PharmacieFranchiseeFactory();
 		}
@@ -95,9 +95,12 @@ public class AjoutPharmacieController  implements Initializable
 		}
 		// Récupérer les valeurs pour créer une pharmacie 
 		
-		Pharmacie p = new PharmacieFranchisee("test0", 0, "test1", "test2");
-		// p = pf.creerPharmacie(NomPharmacie.getText(), SurfacePharmacie.getText(), SiretPharmacie.getText());
-		//Tab tab = new Tab();
+		Pharmacie p;
+		
+		p = pf.creerPharmacie(NomPharmacie.getText(), SurfacePharmacie.getText(), SiretPharmacie.getText());
+		Main.listeDesPharmacies.add(p);
+		
+
 		FXMLLoader loader = new FXMLLoader();
         loader.setLocation(Main.class.getResource("../view/MenuPrincipalLayout.fxml"));
 		MenuPrincipalController controller = loader.getController();
@@ -109,10 +112,8 @@ public class AjoutPharmacieController  implements Initializable
         Main.primaryStage.setScene(scene);
         Main.primaryStage.show();
 
-		
-		//controller.ajouterPharmacieLayout(p);
-		Main.listeDesPharmacies.add(p);
-		//tabPane.getTabs().add(tab);
+
+
 		Stage stage = (Stage) annulateurCreationPharmacie.getScene().getWindow();
 	    stage.close();
 		

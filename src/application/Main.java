@@ -8,7 +8,7 @@ import javafx.application.Application;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
-import model.Pharmacie;
+import model.*;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -29,6 +29,18 @@ public class Main extends Application
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
+		// Initialisation des valeurs de test:
+		
+		Employe e;
+		EmployeFactory ef = new EmployePharmacienDiplomeFactory();
+		e = ef.creerEmploye("Scott", "Micheal", "11 rue Scranton", null, "boss", 4000.0);
+		
+		Pharmacie p;
+		PharmacieFactory pf = new PharmacieIndependanteFactory();
+		p = pf.creerPharmacie("Saint-Ruf", 10, e, null, 60, "Franchisée", "152304456337010");
+		
+		listeDesPharmacies.add(p);
+		
 		Main.primaryStage = primaryStage;
         primaryStage.setTitle("Gestionnaire");
 		initRootLayout();

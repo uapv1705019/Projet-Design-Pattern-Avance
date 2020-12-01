@@ -11,7 +11,7 @@
    <children>
       <BorderPane prefHeight="600.0" prefWidth="800.0">
          <center>
-            <TabPane id="fenetrePrincipale" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+            <TabPane fx:id="fenetrePrincipale" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
               <tabs>
                 <Tab text="Pharmacie 1">
                   <content>
@@ -24,7 +24,7 @@
                                           <HBox alignment="CENTER" prefHeight="32.0" prefWidth="307.0">
                                              <children>
                                                 <Label text="Personnel" />
-                                                <Button mnemonicParsing="false" text="Ajouter un nouveau personnel" onAction="#ajouterPersonnel">
+                                                <Button mnemonicParsing="false" onAction="#ajouterPersonnel" text="Ajouter un nouveau personnel">
                                                    <HBox.margin>
                                                       <Insets left="30.0" />
                                                    </HBox.margin>
@@ -47,7 +47,7 @@
                                           <HBox prefHeight="29.0" prefWidth="493.0">
                                              <children>
                                                 <Label text="Transactions" />
-                                                <Button mnemonicParsing="false" text="Nouvelle Transaction" onAction="#ajouterTransaction"/>
+                                                <Button mnemonicParsing="false" onAction="#ajouterTransaction" text="Nouvelle Transaction" />
                                              </children>
                                           </HBox>
                                        </children>
@@ -128,11 +128,6 @@
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
                   </content>
                 </Tab>
-                  <Tab text="Pharmacie 3">
-                     <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                     </content>
-                  </Tab>
               </tabs>
             </TabPane>
          </center>
