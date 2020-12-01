@@ -10,17 +10,18 @@ public class Produit
 	private double prix_achat;
 	private double prix_vente;
 	private Date date_peremption;
+	private int stock;
 	
-	public Produit(String id, String nom, String type, double prix_achat, double prix_vente, Date date_peremption) 
+	public Produit(String id, String nom, String type, double prix_achat, Date date_peremption) // j'ai retiré du constructeur le prix de vente, car chaque pharmacie fixe son propre prix pour le produit
 	{
 		super();
 		this.id = id;
 		this.nom = nom;
 		this.type = type;
 		this.prix_achat = prix_achat;
-		this.prix_vente = prix_vente;
 		this.date_peremption = date_peremption;
 	}
+	
 	public String getId() 
 	{
 		return id;
@@ -68,6 +69,12 @@ public class Produit
 	public void setDate_peremption(Date date_peremption) 
 	{
 		this.date_peremption = date_peremption;
+	}
+	public int getStock() {
+		return stock;
+	}
+	public void setStock(int stock) {
+		this.stock = stock;
 	}
 	
 	
