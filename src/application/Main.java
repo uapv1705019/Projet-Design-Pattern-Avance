@@ -1,12 +1,14 @@
 package application;
 	
 import java.io.IOException;
+import java.util.ArrayList;
 
 import controller.MenuPrincipalController;
 import javafx.application.Application;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
+import model.Pharmacie;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -18,6 +20,7 @@ import javafx.scene.layout.VBox;
 
 public class Main extends Application 
 {
+	public static ArrayList<Pharmacie> listeDesPharmacies = new ArrayList<Pharmacie>();
 	
 	public static Stage primaryStage;
 	private AnchorPane panneauPrincipal;

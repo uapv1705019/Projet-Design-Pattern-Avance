@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import application.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -38,7 +39,9 @@ public class MenuPrincipalController implements Initializable
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		
+		for( Pharmacie p : Main.listeDesPharmacies ) {
+			this.ajouterPharmacieLayout(p);
+		}
 	}
 	
 	
@@ -48,7 +51,7 @@ public class MenuPrincipalController implements Initializable
 		AnchorPane ap = new AnchorPane();
 		//ap.getChildren().addAll();
 		tab.setContent(ap);
-		//tab.setText(p.getNom());
+		tab.setText(p.getNom());
 		this.fenetrePrincipale.getTabs().add(tab);
 	}
 	

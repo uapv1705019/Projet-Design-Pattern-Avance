@@ -85,7 +85,7 @@ public class AjoutPharmacieController  implements Initializable
 	    stage.close();
 	}
 	
-	public void validerCreationPharmacie(ActionEvent event) {
+	public void validerCreationPharmacie(ActionEvent event) throws IOException {
 		PharmacieFactory pf;
 		if (radioFranchisee.isSelected() == true) {
 			pf = new PharmacieFranchiseeFactory();
@@ -102,24 +102,19 @@ public class AjoutPharmacieController  implements Initializable
         loader.setLocation(Main.class.getResource("../view/MenuPrincipalLayout.fxml"));
 		MenuPrincipalController controller = loader.getController();
 		
-		try 
-        {
-        	panneauPrincipal = (AnchorPane) loader.load();
-        	// Show the scene containing the root layout.
-            Scene scene = new Scene(panneauPrincipal);
-            Main.primaryStage.setScene(scene);
-            Main.primaryStage.show();
-        	
-		} 
-        catch (IOException e) 
-        {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	
+    	panneauPrincipal = (AnchorPane) loader.load();
+    	// Show the scene containing the root layout.
+        Scene scene = new Scene(panneauPrincipal);
+        Main.primaryStage.setScene(scene);
+        Main.primaryStage.show();
+
 		
-		controller.ajouterPharmacieLayout(p);
-		
+		//controller.ajouterPharmacieLayout(p);
+		Main.listeDesPharmacies.add(p);
 		//tabPane.getTabs().add(tab);
+		Stage stage = (Stage) annulateurCreationPharmacie.getScene().getWindow();
+	    stage.close();
 		
 		
 	}
