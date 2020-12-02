@@ -11,6 +11,7 @@ public abstract class Pharmacie //TODO gérer les stocks des produits
 	private double surface_commerciale;
 	private String type_pharmacie;
 	private String SIRET;
+	private int nb_produits_vendus;
 	
 	public Pharmacie(String nom, double surface_commerciale, String type_pharmacie, String sIRET) 
 	{
@@ -59,7 +60,19 @@ public abstract class Pharmacie //TODO gérer les stocks des produits
 		}
 	}
 
-	
+	public void primePharmaciens() // Ici je veux donner une prime à chaque PharmacienDiplome. Or, dans la liste_employes, ce sont des Employe, qui peuvent être soit PharmacienDiplome, soit PreparateurCommande. Créer une ArrayList contenant plusieurs types n'est pas une bonne idée. Je ne vois pas comment faire 
+	{
+		/*for(int i = 0; i< this.liste_employes.size(); i++)
+		{
+			Employe tmp = this.liste_employes.get(i);
+			if(tmp.getType_employe() == "Pharmacien diplome")
+			{
+				PharmacienDiplome tmp1 = (PharmacienDiplome) this.liste_employes.get(i);
+				tmp1.setPrime(this.nb_produits_vendus/100);
+				//TODO réinsérer l'élément dans la liste_employes
+			}
+		}*/
+	}
 	
 	
 	
@@ -103,5 +116,17 @@ public abstract class Pharmacie //TODO gérer les stocks des produits
 	public void setSIRET(String sIRET) {
 		SIRET = sIRET;
 	}
+
+	public int getNb_produits_vendus() {
+		return nb_produits_vendus;
+	}
+
+	public void setNb_produits_vendus(int nb_produits_vendus) {
+		this.nb_produits_vendus = nb_produits_vendus;
+	}
+
+	
+	
+	
 
 };
