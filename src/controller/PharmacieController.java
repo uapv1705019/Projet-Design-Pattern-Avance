@@ -26,9 +26,9 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import model.Pharmacie;
 
-public class MenuPrincipalController implements Initializable
+public class PharmacieController implements Initializable
 {
-	private static MenuPrincipalController CONTROLLER;
+	private static PharmacieController CONTROLLER;
 	
 	/* 
 	 * Fenetre contenant les onglets
