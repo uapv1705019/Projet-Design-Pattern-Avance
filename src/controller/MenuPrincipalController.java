@@ -57,7 +57,15 @@ public class MenuPrincipalController implements Initializable
 	public void ajouterPharmacieLayout(Pharmacie p) throws IOException {
 		Tab tab = new Tab();
 		
-		tab.setContent(FXMLLoader.load(getClass().getResource("../view/PharmacieLayout.fxml")));
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../view/PharmacieLayout.fxml"));
+
+		PharmacieController pc = new PharmacieController();
+		pc.setPharmacie(p);
+
+		
+		tab.setContent(fxmlLoader.load());
+		
+		
 		tab.setText(p.getNom());
 		fenetrePrincipale.getTabs().add(tab);
 	}

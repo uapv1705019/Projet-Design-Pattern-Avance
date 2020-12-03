@@ -6,21 +6,34 @@ public abstract class Pharmacie //TODO gérer les stocks des produits
 {
 	private String nom;
 	private int nb_employes;
-	private ArrayList<Employe> liste_employes;
-	private ArrayList<Produit> liste_produits;
+	private ArrayList<Employe> liste_employes = new ArrayList<Employe>();
+	private ArrayList<Produit> liste_produits = new ArrayList<Produit>();
 	private double surface_commerciale;
 	private String type_pharmacie;
 	private String SIRET;
 	private int nb_produits_vendus;
+	private Compte compteFranchise;
+	private Compte compteClassique;
 	
-	public Pharmacie(String nom, double surface_commerciale, String type_pharmacie, String sIRET) 
+	public Pharmacie(String nom, double surface_commerciale, String type_pharmacie, String SIRET) 
 	{
 		super();
 		this.nom = nom;
 		this.surface_commerciale = surface_commerciale;
 		this.type_pharmacie = type_pharmacie;
-		SIRET = sIRET;
+		this.SIRET = SIRET;
 	}
+	
+	public void ajouterCompte(Compte c) {
+		if(c.getType() == "franchise" && this.compteFranchise == null && this.type_pharmacie == "franchisee") {
+			this.compteFranchise = c;
+		}
+		else if(c.getType() == "classique" && this.compteClassique == null) {
+			this.compteClassique = c;
+		}
+		return;
+	}
+	
 	
 	public void ajouterEmploye(Employe employe)
 	{
@@ -123,6 +136,10 @@ public abstract class Pharmacie //TODO gérer les stocks des produits
 
 	public void setNb_produits_vendus(int nb_produits_vendus) {
 		this.nb_produits_vendus = nb_produits_vendus;
+	}
+
+	public ArrayList<Employe> getListeEmploye() {
+		return this.liste_employes;
 	}
 
 	

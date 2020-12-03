@@ -1,6 +1,7 @@
 package model;
 
 public abstract class Compte {
+	String type;
 	String IBAN;
 	float credit;
 	
@@ -9,5 +10,9 @@ public abstract class Compte {
 			return true;
 		}
 		return false;
+	}
+
+	public String getType() {
+		return this.type;
 	}
 }

@@ -31,13 +31,27 @@ public class Main extends Application
 	public void start(Stage primaryStage) throws Exception {
 		// Initialisation des valeurs de test:
 		
-		Employe e;
+		Employe e, e1, e2, e3, e4;
+		
 		EmployeFactory ef = new EmployePharmacienDiplomeFactory();
 		e = ef.creerEmploye("Scott", "Micheal", "11 rue Scranton", null, "boss", 4000.0);
+		e1 = ef.creerEmploye("Schrute K.", "Dwight", "12 rue de Scranton", null, "assistant", 3200.0);
+		
+		ef = new EmployePreparateurCommandeFactory();
+		e2 = ef.creerEmploye("Stanley", "Hudson", "14 rue de Scranton", null, "assistant", 3200.0);
+		e3 = ef.creerEmploye("Alex", "Meyson", "1 rue Union", null, "assistant", 3200.0);
+		e4 = ef.creerEmploye("Frank", "Woods", "4 avenue Vorkuta", null, "assistant", 3200.0);
+		
 		
 		Pharmacie p;
 		PharmacieFactory pf = new PharmacieIndependanteFactory();
 		p = pf.creerPharmacie("Saint-Ruf", 10, e, null, 60, "Franchisée", "152304456337010");
+		
+		
+		p.ajouterEmploye(e1);
+		p.ajouterEmploye(e2);
+		p.ajouterEmploye(e3);
+		p.ajouterEmploye(e4);
 		
 		listeDesPharmacies.add(p);
 		

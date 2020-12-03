@@ -16,6 +16,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.layout.AnchorPane;
@@ -23,54 +24,40 @@ import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import model.Employe;
 import model.Pharmacie;
 
 public class PharmacieController implements Initializable
 {
 	private static PharmacieController CONTROLLER;
 	
-	/* 
-	 * Fenetre contenant les onglets
-	 */
-	@FXML 
-	private TabPane fenetrePrincipale;
+	Pharmacie pharmacie;
 	
-	/* 
-	 * Bouton permettant l'ajout de nouvelles pharmacies
-	 */
 	@FXML
-	private Button AjouteurPharmacie;
+	private ScrollPane employeListe;
+	
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		for( Pharmacie p : Main.listeDesPharmacies ) {
-			try {
-				this.ajouterPharmacieLayout(p);
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
+		VBox conteneurEmploye = new VBox();
+		Text info = new Text();
+		for( Employe e : pharmacie.getListeEmploye() ) {
+			
+			info.setText(e.getNom() + " ; " + e.getPrenom() + " ; " + e.getAdresse());
+			conteneurEmploye.getChildren().addAll(info);
 		}
-	}
-	
-	
-	public void ajouterPharmacieLayout(Pharmacie p) throws IOException {
-		Tab tab = new Tab();
 		
-		tab.setContent(FXMLLoader.load(getClass().getResource("../view/PharmacieLayout.fxml")));
-		tab.setText(p.getNom());
-		fenetrePrincipale.getTabs().add(tab);
+
+
+		
+		
 	}
 	
-	
-	public void ajouterPharmacie(ActionEvent event) throws IOException {
-		Parent info = FXMLLoader.load(getClass().getResource("../view/AjoutPharmacieLayout.fxml"));
-        Scene scene = new Scene(info);
-        // Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        Stage appStage = new Stage();
-        appStage.setTitle("Ajout en cours");
-        appStage.setScene(scene);
-        appStage.show();
+	public void setPharmacie(Pharmacie p) {
+		this.pharmacie = p;
+		return;
 	}
 	
 	
