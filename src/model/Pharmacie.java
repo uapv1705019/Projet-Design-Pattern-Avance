@@ -2,7 +2,7 @@ package model;
 
 import java.util.ArrayList;
 
-public abstract class Pharmacie 
+public abstract class Pharmacie //TODO gérer les stocks des produits
 {
 	private String nom;
 	private int nb_employes;
@@ -39,9 +39,10 @@ public abstract class Pharmacie
 		}
 	}
 	
-	public void ajouterProduit(Produit produit, double prix_vente) // le prix de vente étant fixé par la pharmacie, j'ai décidé de le faire ici
+	public void ajouterProduit(Produit produit, double prix_vente, int stock) // le prix de vente étant fixé par la pharmacie, j'ai décidé de le faire ici
 	{
 		produit.setPrix_vente(prix_vente);
+		produit.setStock(stock);
 		this.liste_produits.add(produit);
 	}
 	
@@ -58,6 +59,11 @@ public abstract class Pharmacie
 		}
 	}
 
+	
+	
+	
+	
+	
 	public String getNom() {
 		return nom;
 	}
@@ -97,8 +103,5 @@ public abstract class Pharmacie
 	public void setSIRET(String sIRET) {
 		SIRET = sIRET;
 	}
-	
-	
-	
-	
+
 };
