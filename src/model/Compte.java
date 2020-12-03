@@ -5,6 +5,9 @@ public abstract class Compte {
 	float credit;
 	
 	public boolean autoriser(Transaction t) {
-		return true;
+		if (t.getMontant() < this.credit) {
+			return true;
+		}
+		return false;
 	}
 }

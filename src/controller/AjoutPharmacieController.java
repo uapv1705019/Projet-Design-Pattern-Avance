@@ -99,7 +99,7 @@ public class AjoutPharmacieController  implements Initializable
 		
 		p = pf.creerPharmacie(NomPharmacie.getText(), SurfacePharmacie.getText(), SiretPharmacie.getText());
 		Main.listeDesPharmacies.add(p);
-		
+		// eterereterer
 
 		FXMLLoader loader = new FXMLLoader();
         loader.setLocation(Main.class.getResource("../view/MenuPrincipalLayout.fxml"));

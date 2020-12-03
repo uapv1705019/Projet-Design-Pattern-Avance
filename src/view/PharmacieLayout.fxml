@@ -7,15 +7,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="mainPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MenuPrincipalController">
+<AnchorPane fx:id="ajoutPharmacie" prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" >
    <children>
-      <BorderPane prefHeight="600.0" prefWidth="800.0">
-         <center>
-            <TabPane fx:id="fenetrePrincipale" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
-              <tabs>
-                <Tab text="Basic Template">
-                  <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
                               <FlowPane layoutX="-1.0" layoutY="-1.0" prefHeight="523.0" prefWidth="800.0">
                                  <children>
@@ -24,7 +18,7 @@
                                           <HBox alignment="CENTER" prefHeight="32.0" prefWidth="307.0">
                                              <children>
                                                 <Label text="Personnel" />
-                                                <Button mnemonicParsing="false" onAction="#ajouterPersonnel" text="Ajouter un nouveau personnel">
+                                                <Button mnemonicParsing="false"  text="Ajouter un nouveau personnel">
                                                    <HBox.margin>
                                                       <Insets left="30.0" />
                                                    </HBox.margin>
@@ -47,7 +41,7 @@
                                           <HBox prefHeight="29.0" prefWidth="493.0">
                                              <children>
                                                 <Label text="Transactions" />
-                                                <Button mnemonicParsing="false" onAction="#ajouterTransaction" text="Nouvelle Transaction" />
+                                                <Button mnemonicParsing="false"  text="Nouvelle Transaction" />
                                              </children>
                                           </HBox>
                                        </children>
@@ -121,27 +115,5 @@
                               </FlowPane>
                            </children>
                         </AnchorPane>
-                  </content>
-                </Tab>
-              </tabs>
-            </TabPane>
-         </center>
-         <top>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-               <children>
-                  <Label contentDisplay="CENTER" text="Gestionnaire des pharmacies">
-                     <font>
-                        <Font size="33.0" />
-                     </font>
-                  </Label>
-                  <Button id="AjouteurPharmacie" alignment="BASELINE_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#ajouterPharmacie" text="Ajouter une nouvelle pharmacie">
-                     <HBox.margin>
-                        <Insets left="100.0" />
-                     </HBox.margin>
-                  </Button>
-               </children>
-            </HBox>
-         </top>
-      </BorderPane>
    </children>
 </AnchorPane>
