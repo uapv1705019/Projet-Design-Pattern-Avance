@@ -5,8 +5,9 @@ public abstract class Personne
 	private String nom;
 	private String prenom ;
 	private String adresse;
-	//public CompteBancaire compte;
-	//public CarteBancaire carte;
+	public Compte compte;
+	public CarteBancaire carte;
+	
 	public String getNom() {
 		return nom;
 	}
@@ -25,7 +26,17 @@ public abstract class Personne
 	public void setAdresse(String adresse) {
 		this.adresse = adresse;
 	}
-	
-	
+	public Compte getCompte() {
+		return compte;
+	}
+	public void setCompte(Compte compte) {
+		this.compte = compte;
+	}
+	public CarteBancaire getCarte() {
+		return carte;
+	}
+	public void setCarte(CarteBancaire carte) {
+		this.carte = carte;
+	}
 	
 }
