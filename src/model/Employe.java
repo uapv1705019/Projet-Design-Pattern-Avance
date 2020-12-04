@@ -33,6 +33,5 @@ public abstract class Employe extends Personne
 	public void setDateEmbauche(Date dateEmbauche) {
 		this.dateEmbauche = dateEmbauche;
 	}
-	
-	
+
 }
