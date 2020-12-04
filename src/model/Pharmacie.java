@@ -6,8 +6,8 @@ public abstract class Pharmacie //TODO gérer les stocks des produits
 {
 	private String nom;
 	private int nb_employes;
-	private ArrayList<Employe> liste_employes = new ArrayList<Employe>();
-	private ArrayList<Produit> liste_produits = new ArrayList<Produit>();
+	private ArrayList<Employe> liste_employes;
+	private ArrayList<Produit> liste_produits;
 	private double surface_commerciale;
 	private String type_pharmacie;
 	private String SIRET;
@@ -22,6 +22,8 @@ public abstract class Pharmacie //TODO gérer les stocks des produits
 		this.surface_commerciale = surface_commerciale;
 		this.type_pharmacie = type_pharmacie;
 		this.SIRET = SIRET;
+		this.liste_produits = new ArrayList<Produit>();
+		this.liste_employes = new ArrayList<Employe>();
 	}
 	
 	public void ajouterCompte(Compte c) {

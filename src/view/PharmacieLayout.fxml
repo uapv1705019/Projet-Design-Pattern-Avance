@@ -41,7 +41,7 @@
                                           <HBox prefHeight="29.0" prefWidth="493.0">
                                              <children>
                                                 <Label text="Transactions" />
-                                                <Button mnemonicParsing="false"  text="Nouvelle Transaction" />
+                                                <Button mnemonicParsing="false"  text="Nouvelle Transaction"/>
                                              </children>
                                           </HBox>
                                        </children>

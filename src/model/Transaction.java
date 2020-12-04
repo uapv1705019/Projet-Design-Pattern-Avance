@@ -6,6 +6,7 @@ public class Transaction {
 	private float montant;
 	private String reference;
 	private Compte acheteur;
+	private CarteBancaire cbAcheteur;
 	private String etat;
 	
 	
@@ -18,6 +19,19 @@ public class Transaction {
 		this.etat = etat;
 	}
 	
+	public Transaction(String pays, float montant, String reference, CarteBancaire cbAcheteur, String etat) {
+		super();
+		this.pays = pays;
+		this.montant = montant;
+		this.reference = reference;
+		this.cbAcheteur = cbAcheteur;
+		this.etat = etat;
+	}
+	
+	
+	public CarteBancaire getCb() {
+		return cbAcheteur;
+	}
 	public String getPays() {
 		return pays;
 	}

@@ -43,8 +43,9 @@ public class PharmacieController implements Initializable
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		VBox conteneurEmploye = new VBox();
 		Text info = new Text();
+		System.out.println(pharmacie.getListeEmploye().toString());
 		for( Employe e : pharmacie.getListeEmploye() ) {
-			
+			System.out.println(e.getNom());
 			info.setText(e.getNom() + " ; " + e.getPrenom() + " ; " + e.getAdresse());
 			conteneurEmploye.getChildren().addAll(info);
 		}
